@@ -11,6 +11,18 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
+.navbar-inverse {
+  background-color: #4E4843;
+}
+
+
+/* Page header */
+.page-header{
+  margin: 60px 0 30px;
+  border-bottom: none;
+}
+
+
 /* Particles spinner */
 #pjs-container {
   position: absolute;
@@ -43,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 160px;
   height: 160px;
   border-radius: 80px;
-  background-color: #333333;
+  background-color: #4E4843;
 }
 
 
