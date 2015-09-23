@@ -10,15 +10,11 @@ body{
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   font-family: 'Hind';
-  color: #CEAAA2;
+  color: #999;
 }
 
 .navbar-inverse {
-  background-color: #4E4843;
-}
-
-.panel-download{
-  margin-top: 60px;
+  background-color: #444;
 }
 
 
@@ -61,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 160px;
   height: 160px;
   border-radius: 80px;
-  background-color: #4E4843;
+  background-color: #444;
 }
 
 
@@ -70,6 +66,10 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .home-download-link-subtitle{
   margin-left: 20px;
+}
+
+.panel-download{
+  margin-top: 60px;
 }
 
 
