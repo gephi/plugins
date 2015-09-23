@@ -1,0 +1,216 @@
+{
+  "plugins": [
+    {
+      "name": "Sigmajs Exporter"
+    , "type": [
+        "exports"
+      ]
+    , "screenshots": [
+        "https://marketplace.gephi.org/wp-content/uploads/2013/01/twitter-620.png?71aaf5"
+      ]
+    , "authors": [
+        {
+          "name": "Scott Hale"
+        , "link": "http://www.scotthale.net/"
+        }
+      ]
+    , "sourcecode": "https://github.com/oxfordinternetinstitute/gephi-plugins/tree/JSONExporter/sigmaExporter"
+    , "license": "GPL v3"
+    , "supported_platforms": [
+        "linux"
+      , "macos"
+      , "windows"
+      ]
+    , "last_update": "August 9, 2013"
+    , "description": "Export your network from Gephi to a predefined Sigma.js template. Choose to include search, group selection, explanatory text, etc. without having to do any HTML/JavaScript coding. Upload the output to any webserver and enjoy a rich HTML5 interactive visualization of your network.
+
+Example output is available at: [http://blogs.oii.ox.ac.uk/vis/?page_id=115](http://blogs.oii.ox.ac.uk/vis/?page_id=115) More features are coming and better validation is needed, but I’m making this alpha version of the code available quickly because of the demand I’ve received for it. More [information on the project](http://blogs.oii.ox.ac.uk/vis/) is available on [our blog](http://blogs.oii.ox.ac.uk/vis/). The underlying[HTML5/CSS/JS framework used to render the graphs](https://github.com/oxfordinternetinstitute/InteractiveVis/) is also available on [GitHub as a separate project](https://github.com/oxfordinternetinstitute/InteractiveVis/) and changes / pull requests are welcome.
+
+Once installed, restart Gephi and you will see a **Export to sigma.js **option on the **File-&gt;Export** menu. Choose a location to export to, set export customization options, and click OK. The resulting folder can be uploaded to any webserver to showcase your network. Please note, due to browser security restrictions in Chrome you will not be able to view the result without a webserver (Other browsers may work locally).
+
+Please report any issues or feature requests on the [GitHub page](https://github.com/oxfordinternetinstitute/gephi-plugins/issues/).
+
+ 
+
+Release notes:
+
+1.0 (6 Nov 2012) Initial release
+
+1.1 (Jan 2013) Updated for 0.8.2 Gephi release
+
+1.1.1 (Feb 2013) Store edge weight to the ‘size’ attribute in the data so that this is displayed by Sigma.js. It is likely necessary to tweak the minEdgeSize and maxEdgeSize values in config.json for your particular configuration. The config.json files Export your network from Gephi to a predefined Sigma.js template. Choose to include search, group selection, explanatory text, etc. without having to do any HTML/JavaScript coding. Upload the output to any webserver and enjoy a rich HTML5 interactive visualization of your network.
+
+Example output is available at: [http://blogs.oii.ox.ac.uk/vis/?page_id=115](http://blogs.oii.ox.ac.uk/vis/?page_id=115) More features are coming and better validation is needed, but I’m making this alpha version of the code available quickly because of the demand I’ve received for it. More [information on the project](http://blogs.oii.ox.ac.uk/vis/) is available on [our blog](http://blogs.oii.ox.ac.uk/vis/). The underlying[HTML5/CSS/JS framework used to render the graphs](https://github.com/oxfordinternetinstitute/InteractiveVis/) is also available on [GitHub as a separate project](https://github.com/oxfordinternetinstitute/InteractiveVis/) and changes / pull requests are welcome.
+
+Once installed, restart Gephi and you will see a **Export to sigma.js **option on the **File-&gt;Export** menu. Choose a location to export to, set export customization options, and click OK. The resulting folder can be uploaded to any webserver to showcase your network. Please note, due to browser security restrictions in Chrome you will not be able to view the result without a webserver (Other browsers may work locally).
+
+Please report any issues or feature requests on the [GitHub page](https://github.com/oxfordinternetinstitute/gephi-plugins/issues/).
+
+ 
+
+Release notes:
+
+1.0 (6 Nov 2012) Initial release
+
+1.1 (Jan 2013) Updated for 0.8.2 Gephi release
+
+1.1.1 (Feb 2013) Store edge weight to the ‘size’ attribute in the data so that this is displayed by Sigma.js. It is likely necessary to tweak the minEdgeSize and maxEdgeSize values in config.json for your particular configuration. The config.json files is now in pretty-print mode to make it easier to view and edit.
+
+1.2 (Aug 2013)
+
+- Fix error in configuration causing ‘dim’ option not to work
+- Force UTF-8 encoding on Mac/Windows for data/config files
+- Fix error when graph had no edges
+- Export edge color if given; if not use blend of source and target nodes’ colors
+- Fix error when export path given was invalid
+- Offer option to replace node ids with numbers (can be more compact for large graphs)
+
+is now in pretty-print mode to make it easier to view and edit.
+
+1.2 (Aug 2013)
+
+- Fix error in configuration causing ‘dim’ option not to work
+- Force UTF-8 encoding on Mac/Windows for data/config files
+- Fix error when graph had no edges
+- Export edge color if given; if not use blend of source and target nodes’ colors
+- Fix error when export path given was invalid
+- Offer option to replace node ids with numbers (can be more compact for large graphs)"
+    }
+
+
+  , {
+      "name": "OpenOrd Layout"
+    , "type": [
+        "layout"
+      ]
+    , "screenshots": [
+        "https://marketplace.gephi.org/wp-content/uploads/2012/10/openorb_medium.png?71aaf5"
+      , "https://marketplace.gephi.org/wp-content/uploads/2012/10/openorb_medium.png?71aaf5"
+      , "https://marketplace.gephi.org/wp-content/uploads/2012/10/openorb_medium.png?71aaf5"
+      ]
+    , "authors": [
+        {
+          "name": "Mathieu Bastian"
+        , "link": "http://gephi.org/"
+        }
+      ]
+    , "sourcecode": "https://github.com/gephi/gephi-plugins/tree/openord-layout"
+    , "license": "GPL v3"
+    , "supported_platforms": [
+        "linux"
+      , "macos"
+      , "windows"
+      ]
+    , "last_update": "January 4, 2013"
+    , "description": "#### Introduction
+
+Force-Directed layout algorithm for real-world large-scale undirected graphs.
+
+#### Plugin Owner’s Notes
+
+It is one of the few force-directed layout algorithms that can scale to over 1 million nodes, making it ideal for large graphs. However, small graphs (hundreds or less) do not always end up looking so good. This algorithm expects undirected weighted graphs and aims to better distinguish clusters. It can be run in parallel to speed up computing.
+
+The algorithm is originally based on Frutcherman-Reingold and works with a fixed number of iterations. The algorithm is using simulated annealing and has five different phases: liquid, expansion, cool-down, crunch, and simmer. Each stage is a fraction of the total iterations and several parameters like temperature, attraction and damping are changing. The default schedule spends approximately 25% of its time in the liquid stage, 25% in the expansion stage, 25% in the cool-down stage, 10% in the crunch stage, and 15% in the simmer stage.
+
+The original OpenOrd C++ implementation is available at the following address : [http://www.cs.sandia.gov/~smartin/software.html](http://www.cs.sandia.gov/~smartin/software.html). This plug-in version doesn’t include the multi-level version of the algorithm. The algorithm was formerly known as DrL, and before that VxOrd.  
+Parallel
+
+OpenOrd can be run in parallel to speed up computation. Each thread will work on a subset of the nodes of the graph. It’s recommended to put the number of core minus 1 to keep a thread for display. For example on a quad-core computer, it’s good to use three threads.
+
+##### Edge-Cutting
+
+Edge-cutting in OpenOrd is specified using a fraction from 0 to 1. An edge-cutting value of 0 corresponds to the standard Frutcherman-Reingold layout algorithm (no cutting), while an edge-cutting value of 1 corresponds to aggressive cutting. Aggressive cutting promotes clustering but will not cut every edge. The default value for edge-cutting in OpenOrd is 0.8.
+
+##### Layout on a grid
+
+[Gephi OpenOrd layout on a grid](http://vimeo.com/24731034) from [gephi](http://vimeo.com/gephi) on [Vimeo](http://vimeo.com/).
+
+##### Reference
+
+S. Martin, W. M. Brown, R. Klavans, and K. Boyack (to appear, 2011), “OpenOrd: An Open-Source Toolbox for Large Graph Layout,” SPIE Conference on Visualization and Data Analysis (VDA).
+
+##### Release history
+
+- **0.4** (Feb 11): Configure time spent in each stage (liquid, expansion, cool-down, crunch and simmer)
+- **0.3** (Nov 10): First plugin release"
+    }
+
+
+  , {
+      "name": "Dummy Plugin With A Very Long And Annoying Name Whose Purpose Is To Try To Break The UI - And Trust Me People Can Actually Use Such Long Names"
+    , "type": [
+        "exports"
+      , "layout"
+      , "import"
+      , "filter"
+      ]
+    , "screenshots": [
+      ]
+    , "authors": [
+        {
+          "name": "Sangoku From Dragon Ball Z II bis Prime The Return Ultimate Vengeance Of Final Chapter"
+        , "link": "http://google.com"
+        }
+      ]
+    , "sourcecode": "http://google.com"
+    , "license": "GPL v3"
+    , "supported_platforms": [
+        "linux"
+      , "macos"
+      , "windows"
+      ]
+    , "last_update": "January 1, 2000"
+    , "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet leo sed libero feugiat cursus. Nulla mattis augue at tortor dignissim laoreet. Suspendisse dapibus tortor non malesuada lobortis. Ut ut erat ex. Duis bibendum nec erat eu vehicula. Maecenas augue odio, eleifend sit amet ligula eu, rutrum volutpat eros. Fusce at leo eu mi egestas scelerisque. Integer ac risus nec magna venenatis blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt non nisl vel sagittis. Maecenas vel sagittis elit."
+    }
+
+
+  , {
+      "name": "Almost Empty Plugin"
+    , "type": "layout"
+    , "screenshots": [
+      ]
+    , "authors": [
+        {
+          "name": "Poney"
+        }
+      ]
+    , "supported_platforms": [
+        "windows"
+      ]
+    , "last_update": "January 1, 2000"
+    , "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    }
+
+
+  , {
+      "name": "Empty Plugin"
+    }
+
+
+  , {
+      "name": "Damaged Plugin"
+    , "type": [
+        "Exports"
+      , "layout"
+      , "layout"
+      , "Layout"
+      ,
+      ]
+    , "screenshots": "http://google.com"
+    , "Authors": [
+        {
+          "name": "Bug Man"
+        }
+      ]
+    , "sourcecode": "http:wrong//URL"
+    , "license": null
+    , "supported_platforms": [
+        "linux"
+      , "beOS"
+      ]
+    , "last_update": "1er Brumaire -25"
+    , "description": ""
+    }
+
+  ]
+}
