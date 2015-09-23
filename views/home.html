@@ -7,25 +7,46 @@
 <div class="container" ng-show="!loading">
   
   <div class="row">
-    <div class="col-md-12">
+
+    <div class="col-md-8">
       <div class="page-header">
+
         <h1>Gephi Plugins</h1>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <angucomplete-alt
+              placeholder="Search"
+              pause="100"
+              selected-object="selectedPlugin"
+              local-data="data.plugins"
+              search-fields="name"
+              title-field="name"
+              minlength="1"
+              input-class="form-control form-control-small"
+            />
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <div class="panel panel-default">
+    <div class="col-md-4">
+      <div class="panel panel-default panel-download">
         <div class="panel-body">
 
           <button class="btn btn-lg btn-link">
-            <span class="glyphicon glyphicon-download"></span> DOWNLOAD GEPHI {{osInfo}}
+            <span class="glyphicon glyphicon-download"></span> DOWNLOAD GEPHI
           </button>
+
+          <p class="text-muted home-download-link-subtitle">
+            {{osInfo}}
+          </p>
 
         </div>
       </div>
     </div>
+
   </div>
 
   <div class="row">

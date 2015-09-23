@@ -3,16 +3,22 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
 body{
-  font-family: 'Hind';
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
+  font-family: 'Hind';
+  color: #CEAAA2;
 }
 
 .navbar-inverse {
   background-color: #4E4843;
+}
+
+.panel-download{
+  margin-top: 60px;
 }
 
 
@@ -59,7 +65,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
+/* ==========================================================================
+   Home view specific styles
+   ========================================================================== */
+.home-download-link-subtitle{
+  margin-left: 20px;
+}
 
 
 
