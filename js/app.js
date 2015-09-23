@@ -4,6 +4,7 @@
 angular.module('gephiPluginsFront', [
   'ngRoute'
 , 'gephiPluginsFront.services'
+, 'gephiPluginsFront.directives'
 , 'gephiPluginsFront.home'
 ]).
 config(['$routeProvider', function($routeProvider) {

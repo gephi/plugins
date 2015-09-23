@@ -3,10 +3,48 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+body{
+  font-family: 'Hind';
+}
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
 
+/* Particles spinner */
+#pjs-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
 
-
+  -webkit-user-select: none; /* Chrome/Safari */        
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+ */
+       -o-user-select: none;
+          user-select: none;
+}
+#pjs-container .pjs-txt-container{
+  position: absolute;
+  left: -100px;
+  top: -20px;
+}
+#pjs-container .pjs-txt-container .pjs-txt{
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  font-size: 28px;
+  color: #FFFFFF;
+  font-weight: 300;
+}
+#particles-js {
+  position: absolute;
+  margin-left: -80px;
+  margin-top: -80px;
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+  background-color: #333333;
+}
 
 
 
