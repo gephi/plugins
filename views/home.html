@@ -49,20 +49,14 @@
 
   <div class="row">
     <div class="col-md-12">
-      <h3>Best plugins</h3>
+      <h3>Last plugins</h3>
     </div>
   </div>
 
   <div class="row">
 
-    <div class="col-md-2" ng-repeat="plugin in data.plugins" >
-      <div class="panel panel-default">
-        <div class="panel-body">
-          {{plugin.name}}
-          <br>
-          <br>
-        </div>
-      </div>
+    <div class="col-lg-2 col-sm-4" ng-repeat="plugin in data.plugins|orderBy:lastUpdate|limitTo:6 track by $index" >
+      <plugin-thumbnail plugin="plugin"/>
     </div>
 
   </div>

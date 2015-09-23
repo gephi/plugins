@@ -11,6 +11,16 @@ angular.module('gephiPluginsFront.directives', [])
     }
   }])
 
+  .directive('pluginThumbnail', [function(){
+    return {
+      restrict: 'E'
+      ,templateUrl: 'partials/pluginThumbnail.html'
+      ,scope: {
+        plugin: '='
+      }
+    }
+  }])
+
   .directive('spinner', [function(){
     return {
       restrict: 'E'
