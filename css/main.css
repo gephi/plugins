@@ -13,6 +13,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Hind';
   color: #999;
 }
+.section-subtitle{
+  margin-top: 0px;
+}
 
 .navbar-inverse {
   background-color: #444;
@@ -148,6 +151,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 60px;
 }
 
+.tagItem{
+  font-family: 'Hind'
+}
 
 
 

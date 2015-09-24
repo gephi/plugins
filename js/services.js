@@ -43,6 +43,12 @@ angular.module('gephiPluginsFront.services', [])
 
     function consolidateJson(json) {
 
+      var index = {
+            type: {}
+          , version: {}
+          , os: {}
+          }
+
       json.plugins.forEach(function(p){
         
         // Identify a valid url for the main image
@@ -60,6 +66,62 @@ angular.module('gephiPluginsFront.services', [])
         if ( !p.image ) {
           console.log('plugin ' + p.name + ': no valid image')
         }
+
+
+        // Types, versions, os: trim and to lower case
+
+        if ( p.types && p.types.constructor === Array ) {
+          p.types.forEach( function(d) {
+
+            d = d.trim().toLowerCase()
+
+          } )
+        }
+
+        if ( p.versions && p.versions.constructor === Array ) {
+          p.versions.forEach( function(d) {
+
+            d = d.trim().toLowerCase()
+
+          } )
+        }
+
+        if ( p.supported_platforms && p.supported_platforms.constructor === Array ) {
+          p.supported_platforms.forEach( function(d) {
+
+            d = d.trim().toLowerCase()
+
+          } )
+        }
+
+
+        // Index types, version and os
+
+        if ( p.types && p.types.constructor === Array ) {
+          p.types.forEach( function(t) {
+
+            index.type[t] = ( index.type[t] || 0 ) + 1
+
+          } )
+        }
+
+        if ( p.versions && p.versions.constructor === Array ) {
+          p.versions.forEach( function(v) {
+
+            index.version[v] = ( index.version[v] || 0 ) + 1
+
+          } )
+        }
+
+        if ( p.supported_platforms && p.supported_platforms.constructor === Array ) {
+          p.supported_platforms.forEach( function(os) {
+
+            index.os[os] = ( index.os[os] || 0 ) + 1
+
+          } )
+        }
+
+        json._index = index
         
       })
 
