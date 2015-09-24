@@ -7,16 +7,19 @@ angular.module('gephiPluginsFront.directives', [])
   .directive('navbar', [function(){
     return {
       restrict: 'E'
-      ,templateUrl: 'partials/navbar.html'
+    , templateUrl: 'partials/navbar.html'
     }
   }])
 
   .directive('pluginThumbnail', [function(){
     return {
       restrict: 'E'
-      ,templateUrl: 'partials/pluginThumbnail.html'
-      ,scope: {
+    , templateUrl: 'partials/pluginThumbnail.html'
+    , scope: {
         plugin: '='
+      }
+    , link: function(scope, el, attrs) {
+        scope.image = scope.plugin.image || 'img/default_screenshot.jpg'
       }
     }
   }])
@@ -24,11 +27,11 @@ angular.module('gephiPluginsFront.directives', [])
   .directive('spinner', [function(){
     return {
       restrict: 'E'
-      ,templateUrl: 'partials/spinner.html'
-      ,scope: {
+    , templateUrl: 'partials/spinner.html'
+    , scope: {
         text: '='
       }
-      ,link: function(scope, el, attrs) {
+    , link: function(scope, el, attrs) {
 
         particlesJS("particles-js", {
           "particles": {

@@ -5,6 +5,7 @@
    ========================================================================== */
 
 body{
+  background-color: #EEE;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,38 +26,67 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* Tweak autocomplete */
+.angucomplete-holder input{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #F9F9F9;
+}
+.angucomplete-holder input:focus{
+  background-color: #FFF;
+}
+
+
 /* Plugin thumbnails */
 .plugin-thumbnail{
-  border: 1px solid #DDD;
   margin-bottom: 24px;
   cursor: pointer;
+
+  background-color: #FFF;
+
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  border: 1px solid #EEE;
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 .plugin-thumbnail:hover{
-  /*border-color: #666;*/
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
 }
 .plugin-thumbnail .thumbnail-img-container {
   background-color: #DDD;
+  -webkit-transition: background-color ease-in-out .15s;
+       -o-transition: background-color ease-in-out .15s;
+          transition: background-color ease-in-out .15s;
+}
+.plugin-thumbnail:hover .thumbnail-img-container {
+  background-color: #66afe9;
 }
 .plugin-thumbnail .thumbnail-img-container img {
   width:100%;
-  height: 240px;
+  height: 140px;
+  width: 140px;
   object-fit: cover;
+
   opacity: 0.6;
 }
-.plugin-thumbnail:hover .thumbnail-img-container img {
-  opacity: 1;
-}
 .plugin-thumbnail .thumbnail-text{
-  /*background-color: #F4F4F4;*/
-  height: 120px;
+  height: 140px;
   overflow: hidden;
-  padding: 3px 6px 0 6px;
+  padding: 3px 6px 0px 9px;
   font-size: 20px;
-  font-family:'Hind';
-  font-weight: 400;
+  font-family: 'Hind';
+  font-weight: 300;
+  color: #666;
 }
 .plugin-thumbnail:hover .thumbnail-text{
-  /*background-color: #FFF;*/
+  /*background-color: #F4F4F4;*/
 }
 
 

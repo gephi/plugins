@@ -8,7 +8,7 @@
   
   <div class="row">
 
-    <div class="col-md-8">
+    <div class="col-md-8 col-sm-6">
       <div class="page-header">
 
         <h1>Gephi Plugins</h1>
@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4 col-sm-6 hidden-xs">
       <div class="panel-download pull-right">
 
         <button class="btn btn-lg btn-link">
@@ -49,13 +49,13 @@
 
   <div class="row">
     <div class="col-md-12">
-      <h3>Last plugins</h3>
+      <h3>Lastest Plugins</h3>
     </div>
   </div>
 
   <div class="row">
 
-    <div class="col-lg-2 col-sm-4" ng-repeat="plugin in data.plugins|orderBy:lastUpdate|limitTo:6 track by $index" >
+    <div class="col-lg-3 col-sm-6" ng-repeat="plugin in data.plugins|orderBy:lastUpdate|limitTo:4 track by $index" >
       <plugin-thumbnail plugin="plugin"/>
     </div>
 
@@ -116,8 +116,6 @@
     </div>
 
   </div>
-
-  <hr>
 
   <footer>
     

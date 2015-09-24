@@ -1,11 +1,17 @@
-<div class="plugin-thumbnail">
+<div class="plugin-thumbnail" ng-if="plugin && plugin.name">
 
-  <div class="thumbnail-img-container">
-    <img src="{{plugin.image ? plugin.image : 'img/default_screenshot.jpg'}}" alt="{{plugin.name}}">
-  </div>
+  <table><tr><td>
 
-  <div class="thumbnail-text">
-    {{plugin.name}}
-  </div>
+    <div class="thumbnail-img-container">
+      <img ng-src="{{image}}" alt="{{plugin.name}}">
+    </div>
+
+  </td><td>
+
+    <div class="thumbnail-text">
+      {{plugin.name}}
+    </div>
+
+  </td></tr></table>
 
 </div>
