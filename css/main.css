@@ -88,6 +88,17 @@ h1, h2, h3, h4, h5, h6 {
 .plugin-thumbnail:hover .thumbnail-text{
   /*background-color: #F4F4F4;*/
 }
+.plugin-thumbnail .thumbnail-text-end {
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(255,255,255,0)),color-stop(100%,rgba(255,255,255,1))); 
+    background-image: -webkit-linear-gradient(bottom,rgba(0,255,255,0),rgba(0,255,255,1)); 
+    background: linear-gradient(to bottom,rgba(255,255,255,0),rgba(255,255,255,1));
+    top: 100px;
+    right: 1px;
+    height: 41px;
+    position: absolute;
+    margin-right: 15px;
+    left: 156px;
+}
 
 
 /* Particles spinner */
