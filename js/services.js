@@ -71,25 +71,25 @@ angular.module('gephiPluginsFront.services', [])
         // Types, versions, os: trim and to lower case
 
         if ( p.types && p.types.constructor === Array ) {
-          p.types.forEach( function(d) {
+          p.types = p.types.map( function(d) {
 
-            d = d.trim().toLowerCase()
+            return d.trim().toLowerCase()
 
           } )
         }
 
         if ( p.versions && p.versions.constructor === Array ) {
-          p.versions.forEach( function(d) {
+          p.versions = p.versions.map( function(d) {
 
-            d = d.trim().toLowerCase()
+            return d.trim().toLowerCase()
 
           } )
         }
 
         if ( p.supported_platforms && p.supported_platforms.constructor === Array ) {
-          p.supported_platforms.forEach( function(d) {
+          p.supported_platforms = p.supported_platforms.map( function(d) {
 
-            d = d.trim().toLowerCase()
+            return d.trim().toLowerCase()
 
           } )
         }
