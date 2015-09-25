@@ -43,6 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 .plugin-thumbnail{
   margin-bottom: 24px;
   cursor: pointer;
+  overflow: hidden;
 
   background-color: #FFF;
 
@@ -77,19 +78,23 @@ h1, h2, h3, h4, h5, h6 {
   width: 140px;
   object-fit: cover;
 
-  opacity: 0.6;
+  opacity: 0.7;
 }
 .plugin-thumbnail .thumbnail-text{
   height: 140px;
   overflow: hidden;
   padding: 3px 6px 0px 9px;
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'Hind';
   font-weight: 300;
   color: #666;
 }
 .plugin-thumbnail:hover .thumbnail-text{
   /*background-color: #F4F4F4;*/
+}
+.plugin-thumbnail .thumbnail-text h5{
+  font-size: 20px;
+  color: #000;
 }
 .plugin-thumbnail .thumbnail-text-end {
     background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(255,255,255,0)),color-stop(100%,rgba(255,255,255,1))); 

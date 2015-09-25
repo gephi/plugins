@@ -2,6 +2,7 @@
   "plugins": [
     {
       "name": "Sigmajs Exporter"
+    , "catchphrase": "Export your network from Gephi to a predefined Sigma.js template."
     , "types": [
         "exports"
       ]
@@ -32,11 +33,12 @@
     }
 
 
-      , {
-          "name": "OpenOrd Layout"
-        , "types": [
-            "layout"
-          ]
+  , {
+    "name": "OpenOrd Layout"
+    , "catchphrase": "Force-Directed layout algorithm for real-world large-scale undirected graphs."
+    , "types": [
+        "layout"
+      ]
     , "screenshots": [
         "https://marketplace.gephi.org/wp-content/uploads/2012/10/openorb_medium.png?71aaf5"
       , "https://marketplace.gephi.org/wp-content/uploads/2012/10/openorb_medium.png?71aaf5"
@@ -69,6 +71,7 @@
 
   , {
       "name": "Dummy Plugin With A Very Long And Annoying Name Whose Purpose Is To Try To Break The UI - And Trust Me People Can Actually Use Such Long Names"
+    , "catchphrase": "A fictional test plugin"
     , "types": [
         "exports"
       , "layout"
@@ -100,6 +103,7 @@
 
   , {
       "name": "Almost Empty Plugin"
+    , "catchphrase": "Does nothing"
     , "types": "layout"
     , "screenshots": [
       ]
