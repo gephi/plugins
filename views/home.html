@@ -55,7 +55,7 @@
 
   <div class="row">
 
-    <div class="col-lg-3 col-sm-6" ng-repeat="plugin in data.plugins|orderBy:lastUpdate|limitTo:4 track by $index" >
+    <div class="col-lg-3 col-sm-6" ng-repeat="plugin in data.plugins | orderBy:'lastUpdate' | limitTo:4 track by $index" >
       <plugin-thumbnail plugin="plugin"/>
     </div>
 
@@ -80,7 +80,7 @@
 
     <div class="col-sm-2">
       <h3 class="visible-xs">TYPE</h3>
-      <p class="tagItem" ng-repeat="type in typeList"><a href=''>{{type|uppercase}}</a></p>
+      <p class="tagItem" ng-repeat="type in typeList"><a href=''>{{type | uppercase}}</a></p>
     </div>
 
     <div class="col-sm-2">
@@ -91,7 +91,7 @@
 
     <div class="col-sm-2">
       <h3 class="visible-xs">VERSION</h3>
-      <p class="tagItem" ng-repeat="version in versionList"><a href=''>{{version|uppercase}}</a></p>
+      <p class="tagItem" ng-repeat="version in versionList"><a href=''>{{version | uppercase}}</a></p>
     </div>
 
     <div class="col-sm-2">
@@ -102,7 +102,7 @@
 
     <div class="col-sm-2">
       <h3 class="visible-xs">OS</h3>
-      <p class="tagItem" ng-repeat="os in osList"><a href=''>{{os|uppercase}}</a></p>
+      <p class="tagItem" ng-repeat="os in osList"><a href=''>{{os | uppercase}}</a></p>
     </div>
 
   </div>

@@ -45,6 +45,12 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   overflow: hidden;
 
+  -webkit-user-select: none; /* Chrome/Safari */        
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+ */
+       -o-user-select: none;
+          user-select: none;
+
   background-color: #FFF;
 
   -webkit-border-radius: 2px;
@@ -161,6 +167,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .tagItem{
   font-family: 'Hind'
+  font-size: 12px;
 }
 
 
