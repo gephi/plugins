@@ -115,6 +115,9 @@ h1, h2, h3, h4, h5, h6 {
       -ms-user-select: none; /* IE10+ */
        -o-user-select: none;
           user-select: none;
+
+  cursor: crosshair;
+
 }
 #pjs-container .pjs-txt-container {
   position: absolute;
@@ -123,7 +126,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 #pjs-container .pjs-txt-container .pjs-txt {
   width: 200px;
-  height: 100px;
   text-align: center;
   font-size: 28px;
   color: #FFFFFF;
@@ -135,8 +137,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: -80px;
   width: 160px;
   height: 160px;
-  border-radius: 80px;
+  border-radius: 50%;
   background-color: #444;
+  overflow: hidden;
 }
 
 
