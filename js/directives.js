@@ -11,18 +11,21 @@ angular.module('gephiPluginsFront.directives', [])
     }
   }])
 
-  .directive('pluginThumbnail', [function(){
+  .directive('pluginThumbnail', function($location){
     return {
       restrict: 'E'
     , templateUrl: 'partials/pluginThumbnail.html'
     , scope: {
         plugin: '='
       }
-    , link: function(scope, el, attrs) {
-        scope.image = scope.plugin.image || 'img/default_screenshot.jpg'
+    , link: function($scope, el, attrs) {
+        $scope.image = $scope.plugin.image || 'img/default_screenshot.jpg'
+        $scope.go = function() {
+          $location.path('/plugin/' + $scope.plugin.id )
+        }
       }
     }
-  }])
+  })
 
   .directive('spinner', [function(){
     return {

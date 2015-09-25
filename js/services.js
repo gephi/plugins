@@ -47,10 +47,50 @@ angular.module('gephiPluginsFront.services', [])
             type: {}
           , version: {}
           , os: {}
+          , id: {}
           }
 
-      json.plugins.forEach(function(p){
+      json.plugins.forEach(function(p, i){
         
+        // Ensure there is an id
+
+        if ( !p.id || p.id == '' ) {
+
+          // Generate an id
+          if ( p.name ) {
+            p.id = p.name.toLowerCase().replace(/[^a-z0-9\-]*/gi, '')
+            console.log('Plugin "' + p.name + '": no ID, we created one from name: "' + p.id + '"' )
+          } else {
+            p.id = i
+            console.log('Plugin "' + p.name + '": no ID and no name, we generated an ID: "' + p.id + '"' )
+          }
+          
+        } else {
+
+          var validId = p.id.toLowerCase().replace(/[^a-z0-9\-]*/gi, '') || i
+          if ( validId != p.id ) {
+            console.log('Plugin "' + p.name + '": ID "' + p.id + '" is not valid, we modified it to a valid version: "' + validId + '"' )
+            p.id = validId
+          }
+
+        }
+
+        // Check that the id does not already exist
+        if ( index.id[p.id] === undefined ) {
+
+          index.id[p.id] = p
+
+        } else {
+          
+          while ( index.id[p.id] !== undefined ) {
+            p.id = p.id + '-alt'
+          }
+
+          console.log('Plugin "' + p.name + '": ID already existing, we modified it to a valid version: "' + p.id + '"' )
+          index.id[p.id] = p
+
+        }
+
         // Identify a valid url for the main image
 
         if ( p.screenshots && p.screenshots[0] ) {
@@ -64,7 +104,7 @@ angular.module('gephiPluginsFront.services', [])
         }
 
         if ( !p.image ) {
-          console.log('plugin ' + p.name + ': no valid image')
+          console.log('Plugin "' + p.name + '": no valid image')
         }
 
 

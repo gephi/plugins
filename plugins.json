@@ -1,7 +1,8 @@
 {
   "plugins": [
     {
-      "name": "Sigmajs Exporter"
+      "id": "sigmajsexporter"
+    , "name": "Sigmajs Exporter"
     , "catchphrase": "Export your network from Gephi to a predefined Sigma.js template."
     , "types": [
         "exports"
@@ -34,7 +35,8 @@
 
 
   , {
-    "name": "OpenOrd Layout"
+      "id": "openord"
+    , "name": "OpenOrd Layout"
     , "catchphrase": "Force-Directed layout algorithm for real-world large-scale undirected graphs."
     , "types": [
         "layout"
@@ -70,7 +72,8 @@
 
 
   , {
-      "name": "Dummy Plugin With A Very Long And Annoying Name Whose Purpose Is To Try To Break The UI - And Trust Me People Can Actually Use Such Long Names"
+      "id": "dummy"
+    , "name": "Dummy Plugin With A Very Long And Annoying Name Whose Purpose Is To Try To Break The UI - And Trust Me People Can Actually Use Such Long Names"
     , "catchphrase": "A fictional test plugin"
     , "types": [
         "exports"
@@ -102,7 +105,8 @@
 
 
   , {
-      "name": "Almost Empty Plugin"
+      "id": "dummy"
+    , "name": "Almost Empty Plugin"
     , "catchphrase": "Does nothing"
     , "types": "layout"
     , "screenshots": [
@@ -129,7 +133,8 @@
 
 
   , {
-      "name": "Damaged Plugin"
+      "id": "Damaged#"
+    , "name": "Damaged Plugin"
     , "types": [
         "Exports"
       , "layout"

@@ -8,7 +8,8 @@ angular.module('gephiPluginsFront', [
 , 'gephiPluginsFront.directives'
 , 'gephiPluginsFront.home'
 , 'gephiPluginsFront.browse'
+, 'gephiPluginsFront.plugin'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/home'});
+  $routeProvider.otherwise({redirectTo: '/'});
 }]);
