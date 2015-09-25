@@ -8,20 +8,69 @@
   
   <div class="row">
 
-    <div class="col-md-12">
-      <div class="page-header">
+    <div class="col-md-8">
 
-        <h1>{{plugin.name}} <small>Gephi plugin</small></h1>
-        
+      <div class="plugin-card">
+
+        <h1>{{plugin.name}} <small>{{plugin.catchphrase}}</small></h1>
+
+        <p>
+          by
+          <span ng-repeat="author in plugin.authors track by $index">
+            <a href="{{author.link}}">{{author.name}}</a>
+            {{ $index < plugin.authors.length - 1 ? ',' : '' }}
+          </span>
+        </p>
+
+        <p>
+          Last updated {{plugin.last_update}}
+        </p>
+
+        <p>
+          License: {{plugin.license}}
+        </p>
+
+        <p>
+          Supported on
+          <span ng-repeat="os in plugin.supported_platforms track by $index">
+            <a href="">{{os}}</a>
+            {{ $index < plugin.supported_platforms.length - 1 ? ',' : '' }}
+          </span>
+        </p>
+
+        <p>
+          Gephi versions
+          <span ng-repeat="v in plugin.versions track by $index">
+            <a href="">{{v}}</a>
+            {{ $index < plugin.versions.length - 1 ? ',' : '' }}
+          </span>
+        </p>
+
+        <span class="label label-default" ng-repeat="type in plugin.types">
+          {{type}}
+        </span>
+
+        <p>
+          <a href="{{plugin.sourcecode}}">Source code</a>
+        </p>
+
+        <div class="plugin-screenshot" ng-repeat="image in plugin.screenshots">
+          <img ng-src="{{image}}" alt="{{plugin.name}}">
+        </div>
+          
+        <md ng-model="plugin.description"></md>
+
       </div>
     </div>
 
-  </div>
+    <div class="col-md-4">
+      <div class="panel-download">
 
-  <div class="row">
+        <button class="btn btn-lg btn-link">
+          <span class="glyphicon glyphicon-download"></span> DOWNLOAD
+        </button>
 
-    <div class="col-md-12">
-      {{plugin}}
+      </div>
     </div>
 
   </div>

@@ -4,6 +4,7 @@
 angular.module('gephiPluginsFront', [
   'ngRoute'
 , 'angucomplete-alt'
+, 'yaru22.directives.md' // Markdown renderer
 , 'gephiPluginsFront.services'
 , 'gephiPluginsFront.directives'
 , 'gephiPluginsFront.home'

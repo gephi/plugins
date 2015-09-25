@@ -154,6 +154,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* Plugin bug card */
+.plugin-card{
+
+  margin-top: 48px;
+  padding: 24px 36px 36px 36px;
+
+  border: 1px solid #EEE;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  background-color: #FFF;
+  color: #666;
+}
+.plugin-card p, .plugin-card ul, .plugin-card ol {
+  font-family: 'Hind';
+  font-size: 18px;
+}
+.plugin-card .plugin-screenshot{
+  
+}
+.plugin-card .plugin-screenshot img{
+  width:100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+
 /* ==========================================================================
    Home view specific styles
    ========================================================================== */

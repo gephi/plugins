@@ -21,6 +21,7 @@ angular.module('gephiPluginsFront.plugin', ['ngRoute', 'angularUtils.directives.
     $scope.loading = false
     $scope.data = json
     $scope.plugin = $scope.data._index.id[$routeParams['pluginId']]
+    console.log('plugin', $scope.plugin)
   })
 
 });
