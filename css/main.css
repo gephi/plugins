@@ -155,9 +155,11 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* Plugin bug card */
+.plugin-card-spacer{
+  height: 48px;
+}
 .plugin-card{
 
-  margin-top: 48px;
   padding: 24px 36px 36px 36px;
 
   border: 1px solid #EEE;
@@ -173,10 +175,21 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Hind';
   font-size: 18px;
 }
-.plugin-card .plugin-screenshot{
-  
+.plugin-card .plugin-screenshots{
+  background-color: #F4F4F4;
+  margin-top: 36px;
+  margin-left: -36px;
+  margin-right: -36px;
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+          box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);}
+.plugin-card .plugin-screenshots table{
+  width: 100%;
 }
-.plugin-card .plugin-screenshot img{
+.plugin-card .plugin-screenshots img{
   width:100%;
   height: 200px;
   object-fit: cover;

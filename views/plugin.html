@@ -7,12 +7,17 @@
 <div class="container" ng-show="!loading">
   
   <div class="row">
+    <div class="col-md-12">
+      <div class="plugin-card-spacer"
+    </div>
+  </div>
 
+  <div class="row">
     <div class="col-md-8">
 
       <div class="plugin-card">
 
-        <h1>{{plugin.name}} <small>{{plugin.catchphrase}}</small></h1>
+        <h1>{{plugin.name}}</h1>
 
         <p>
           by
@@ -22,6 +27,8 @@
           </span>
         </p>
 
+        <!-- 
+        <small>{{plugin.catchphrase}}</small>
         <p>
           Last updated {{plugin.last_update}}
         </p>
@@ -49,13 +56,19 @@
         <span class="label label-default" ng-repeat="type in plugin.types">
           {{type}}
         </span>
-
         <p>
           <a href="{{plugin.sourcecode}}">Source code</a>
         </p>
+ -->
 
-        <div class="plugin-screenshot" ng-repeat="image in plugin.screenshots">
-          <img ng-src="{{image}}" alt="{{plugin.name}}">
+        <div class="plugin-screenshots">
+          <table><tr>
+            <td ng-repeat="image in plugin.screenshots track by $index">
+              <a target="_blank" href="{{image}}">
+                <img ng-src="{{image}}" alt="{{plugin.name}}">
+              </a>
+            </td>
+          </tr></table>
         </div>
           
         <md ng-model="plugin.description"></md>
@@ -64,13 +77,11 @@
     </div>
 
     <div class="col-md-4">
-      <div class="panel-download">
 
-        <button class="btn btn-lg btn-link">
-          <span class="glyphicon glyphicon-download"></span> DOWNLOAD
-        </button>
+      <button class="btn btn-lg btn-primary">
+        <span class="glyphicon glyphicon-download"></span> DOWNLOAD PLUGIN
+      </button>
 
-      </div>
     </div>
 
   </div>

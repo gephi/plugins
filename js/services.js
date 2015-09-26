@@ -162,6 +162,20 @@ angular.module('gephiPluginsFront.services', [])
         }
 
         json._index = index
+
+
+        // Fix if there is one screenshot instead of many
+
+        if ( p.screenshot && p.screenshots === undefined ) {
+          p.screenshots = p.screenshot // Unique to array fixed below
+        }
+
+
+        // Fix if "screenshots" is a String instead of an Array
+
+        if ( p.screenshots && p.screenshots.constructor == String ) {
+          p.screenshots = [p.screenshots]
+        }
         
       })
 
