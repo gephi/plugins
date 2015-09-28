@@ -48,6 +48,7 @@ angular.module('gephiPluginsFront.services', [])
           , version: {}
           , id: {}
           }
+        , v // version iterator
 
       json.plugins.forEach(function(p, i){
         
@@ -109,7 +110,7 @@ angular.module('gephiPluginsFront.services', [])
 
         // Types, versions: trim and to lower case
 
-        if ( p.types && p.types.constructor === Array ) {
+        if ( p.types && p.types.constructor == Array ) {
           p.types = p.types.map( function(d) {
 
             return d.trim().toLowerCase()
@@ -117,18 +118,21 @@ angular.module('gephiPluginsFront.services', [])
           } )
         }
 
-        if ( p.versions && p.versions.constructor === Array ) {
-          p.versions = p.versions.map( function(d) {
-
-            return d.trim().toLowerCase()
-
-          } )
+        if ( p.versions && p.versions.constructor == Object ) {
+          for ( v in p.versions ) {
+            var url = p.versions[v]
+            if ( url.constructor == String && validateURL(url) ) {
+              p.versions[v] = url.trim().toLowerCase()            
+            } else {
+              delete p.versions[v]
+            }
+          }
         }
 
 
         // Index types, version
 
-        if ( p.types && p.types.constructor === Array ) {
+        if ( p.types && p.types.constructor == Array ) {
           p.types.forEach( function(t) {
 
             index.type[t] = ( index.type[t] || 0 ) + 1
@@ -136,12 +140,12 @@ angular.module('gephiPluginsFront.services', [])
           } )
         }
 
-        if ( p.versions && p.versions.constructor === Array ) {
-          p.versions.forEach( function(v) {
+        if ( p.versions && p.versions.constructor == Object ) {
+          for ( var v in p.versions ) {
 
             index.version[v] = ( index.version[v] || 0 ) + 1
 
-          } )
+          }
         }
 
         json._index = index
@@ -174,6 +178,14 @@ angular.module('gephiPluginsFront.services', [])
           p.types = [p.types]
         }
         
+
+        // Build a flat "version" array
+
+        p._versions = []
+        for ( v in p.versions ) {
+          p._versions.push({version:v, url:p.versions[v]})
+        }
+
       })
 
 

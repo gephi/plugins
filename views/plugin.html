@@ -18,7 +18,7 @@
       <div class="plugin-card">
 
         <div class="plugin-types pull-right">
-          <div ng-repeat="type in plugin.types">
+          <div ng-repeat="type in plugin.types track by $index">
             <span class="label label-primary">
               {{type}}
             </span>
@@ -73,8 +73,8 @@
 
         <p ng-if="plugin.versions">
           Gephi versions
-          <span ng-repeat="v in plugin.versions track by $index">
-            <a href="">{{v}}</a>{{ $index < plugin.versions.length - 1 ? ',' : '' }}
+          <span ng-repeat="versionObj in plugin._versions track by $index">
+            <a href="{{versionObj.url}}">{{versionObj.version}}</a>{{ $index < plugin.versions.length - 1 ? ',' : '' }}
           </span>
         </p>
 

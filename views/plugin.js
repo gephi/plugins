@@ -13,7 +13,6 @@ angular.module('gephiPluginsFront.plugin', ['ngRoute', 'angularUtils.directives.
 
   $scope.loading = true
   $scope.data // List of plugins
-  $scope.osInfo = 'for ' + Detectizr.os.name.toUpperCase() + ' ' + Detectizr.os.version.toUpperCase()
 
   $scope.plugin
 
@@ -21,7 +20,6 @@ angular.module('gephiPluginsFront.plugin', ['ngRoute', 'angularUtils.directives.
     $scope.loading = false
     $scope.data = json
     $scope.plugin = $scope.data._index.id[$routeParams['pluginId']]
-    console.log('plugin', $scope.plugin)
   })
 
 });
