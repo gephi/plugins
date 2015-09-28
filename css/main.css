@@ -28,6 +28,23 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: none;
 }
 
+/* Filter header */
+.filter-header {
+  margin-top: 94px;
+}
+.filter-block {
+  display: inline-block;
+  margin-right: 10px;
+}
+.filter-block .btn {
+  margin-top: -8px;
+}
+.filter-header-text {
+  font-family: "Hind";
+  font-size: 24px;
+  color: #999;
+}
+
 
 /* Tweak autocomplete */
 .angucomplete-holder input{

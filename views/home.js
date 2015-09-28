@@ -9,7 +9,9 @@ angular.module('gephiPluginsFront.home', ['ngRoute'])
   })
 }])
 
-.controller('HomeController', function($scope, PluginsData) {
+.controller('HomeController', function($scope, PluginsData, $location) {
+
+  var inhibateSearch = false
 
   $scope.loading = true
   $scope.data // List of plugins
@@ -17,6 +19,8 @@ angular.module('gephiPluginsFront.home', ['ngRoute'])
 
   $scope.typeList
   $scope.versionList
+
+  $scope.query
   
   PluginsData.fetch(function(json){
     $scope.loading = false
@@ -24,5 +28,20 @@ angular.module('gephiPluginsFront.home', ['ngRoute'])
     $scope.typeList = Object.keys( json._index.type )
     $scope.versionList = Object.keys( json._index.version )
   })
+
+  $scope.pluginSelected = function(selectedItem) {
+    inhibateSearch = true
+    $location.path('/plugin/' + selectedItem.originalObject.id)
+  }
+
+  $scope.queryChanged = function(query) {
+    $scope.query = query
+  }
+
+  $scope.search = function() {
+    if ( !inhibateSearch ) {
+      $location.path('/browse/search/' + $scope.query)
+    }
+  }
 
 });

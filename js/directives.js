@@ -27,6 +27,18 @@ angular.module('gephiPluginsFront.directives', [])
     }
   })
 
+  .directive('ngPressEnter', [function () {
+    return function (scope, element, attrs) {
+      element.bind("keydown keypress", function (event) {
+        if(event.which === 13) {
+          scope.$eval(attrs.ngPressEnter)
+          event.preventDefault()
+          scope.$apply()
+        }
+      })
+    }
+  }])
+
   .directive('spinner', [function(){
     return {
       restrict: 'E'
