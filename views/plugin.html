@@ -57,9 +57,28 @@
 
     <div class="col-md-4">
 
-      <button class="btn btn-lg btn-primary">
-        <span class="glyphicon glyphicon-download"></span> DOWNLOAD PLUGIN
-      </button>
+      <div class="show-xs">
+        <br>
+        <br>
+      </div>
+
+      <div class="btn-group" role="group" aria-label="..." ng-if="plugin._versions && plugin._versions.length > 0">
+        <button type="button" class="btn btn-primary">
+          <span class="glyphicon glyphicon-download"></span> DOWNLOAD 
+        </button>
+
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            for Gephi {{plugin._versions[0].version}}
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li ng-repeat="versionObj in plugin._versions track by $index">
+              <a href="{{versionObj.url}}" target="_blank">{{versionObj.version}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <div class="plugin-side-information">
         
@@ -69,13 +88,6 @@
 
         <p ng-if="plugin.license">
           License: {{plugin.license}}
-        </p>
-
-        <p ng-if="plugin.versions">
-          Gephi versions
-          <span ng-repeat="versionObj in plugin._versions track by $index">
-            <a href="{{versionObj.url}}">{{versionObj.version}}</a>{{ $index < plugin.versions.length - 1 ? ',' : '' }}
-          </span>
         </p>
 
         <p ng-if="plugin.sourcecode">
