@@ -194,7 +194,21 @@ h1, h2, h3, h4, h5, h6 {
   height: 200px;
   object-fit: cover;
 }
-
+.plugin-card blockquote p {
+  display: inline;
+  font-size: 24px;
+  color: #666;
+}
+.plugin-side-information {
+  margin-top: 20px;
+  /*font-family: 'Hind';*/
+  font-size: 14px;
+  color: #999;
+}
+.plugin-types {
+  margin-top: 12px;
+  text-align: right;
+}
 
 /* ==========================================================================
    Home view specific styles

@@ -176,6 +176,20 @@ angular.module('gephiPluginsFront.services', [])
         if ( p.screenshots && p.screenshots.constructor == String ) {
           p.screenshots = [p.screenshots]
         }
+
+
+        // Fix if there is one type instead of many
+
+        if ( p.type && p.types === undefined ) {
+          p.types = p.type // Unique to array fixed below
+        }
+
+
+        // Fix if "types" is a String instead of an Array
+
+        if ( p.types && p.types.constructor == String ) {
+          p.types = [p.types]
+        }
         
       })
 

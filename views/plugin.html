@@ -17,9 +17,17 @@
 
       <div class="plugin-card">
 
+        <div class="plugin-types pull-right">
+          <div ng-repeat="type in plugin.types">
+            <span class="label label-primary">
+              {{type}}
+            </span>
+          </div>
+        </div>
+
         <h1>{{plugin.name}}</h1>
 
-        <p>
+        <p ng-if="plugin.authors && plugin.authors.length > 0">
           by
           <span ng-repeat="author in plugin.authors track by $index">
             <a href="{{author.link}}">{{author.name}}</a>
@@ -27,41 +35,8 @@
           </span>
         </p>
 
-        <!-- 
-        <small>{{plugin.catchphrase}}</small>
-        <p>
-          Last updated {{plugin.last_update}}
-        </p>
 
-        <p>
-          License: {{plugin.license}}
-        </p>
-
-        <p>
-          Supported on
-          <span ng-repeat="os in plugin.supported_platforms track by $index">
-            <a href="">{{os}}</a>
-            {{ $index < plugin.supported_platforms.length - 1 ? ',' : '' }}
-          </span>
-        </p>
-
-        <p>
-          Gephi versions
-          <span ng-repeat="v in plugin.versions track by $index">
-            <a href="">{{v}}</a>
-            {{ $index < plugin.versions.length - 1 ? ',' : '' }}
-          </span>
-        </p>
-
-        <span class="label label-default" ng-repeat="type in plugin.types">
-          {{type}}
-        </span>
-        <p>
-          <a href="{{plugin.sourcecode}}">Source code</a>
-        </p>
- -->
-
-        <div class="plugin-screenshots">
+        <div class="plugin-screenshots" ng-show="plugin.screenshots && plugin.screenshots.length > 0">
           <table><tr>
             <td ng-repeat="image in plugin.screenshots track by $index">
               <a target="_blank" href="{{image}}">
@@ -70,6 +45,10 @@
             </td>
           </tr></table>
         </div>
+
+        <blockquote ng-if="plugin.catchphrase && plugin.catchphrase != ''">
+          <p>{{plugin.catchphrase}}</p>
+        </blockquote>
           
         <md ng-model="plugin.description"></md>
 
@@ -81,6 +60,36 @@
       <button class="btn btn-lg btn-primary">
         <span class="glyphicon glyphicon-download"></span> DOWNLOAD PLUGIN
       </button>
+
+      <div class="plugin-side-information">
+        
+        <p ng-if="plugin.last_update">
+          Last updated {{plugin.last_update}}
+        </p>
+
+        <p ng-if="plugin.license">
+          License: {{plugin.license}}
+        </p>
+
+        <p ng-if="plugin.supported_platforms">
+          Supported on
+          <span ng-repeat="os in plugin.supported_platforms track by $index">
+            <a href="">{{os}}</a>{{ $index < plugin.supported_platforms.length - 1 ? ',' : '' }}
+          </span>
+        </p>
+
+        <p ng-if="plugin.versions">
+          Gephi versions
+          <span ng-repeat="v in plugin.versions track by $index">
+            <a href="">{{v}}</a>{{ $index < plugin.versions.length - 1 ? ',' : '' }}
+          </span>
+        </p>
+
+        <p ng-if="plugin.sourcecode">
+          <a href="{{plugin.sourcecode}}">Source code</a>
+        </p>
+
+      </div>
 
     </div>
 
