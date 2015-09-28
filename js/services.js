@@ -46,7 +46,6 @@ angular.module('gephiPluginsFront.services', [])
       var index = {
             type: {}
           , version: {}
-          , os: {}
           , id: {}
           }
 
@@ -108,7 +107,7 @@ angular.module('gephiPluginsFront.services', [])
         }
 
 
-        // Types, versions, os: trim and to lower case
+        // Types, versions: trim and to lower case
 
         if ( p.types && p.types.constructor === Array ) {
           p.types = p.types.map( function(d) {
@@ -126,16 +125,8 @@ angular.module('gephiPluginsFront.services', [])
           } )
         }
 
-        if ( p.supported_platforms && p.supported_platforms.constructor === Array ) {
-          p.supported_platforms = p.supported_platforms.map( function(d) {
 
-            return d.trim().toLowerCase()
-
-          } )
-        }
-
-
-        // Index types, version and os
+        // Index types, version
 
         if ( p.types && p.types.constructor === Array ) {
           p.types.forEach( function(t) {
@@ -149,14 +140,6 @@ angular.module('gephiPluginsFront.services', [])
           p.versions.forEach( function(v) {
 
             index.version[v] = ( index.version[v] || 0 ) + 1
-
-          } )
-        }
-
-        if ( p.supported_platforms && p.supported_platforms.constructor === Array ) {
-          p.supported_platforms.forEach( function(os) {
-
-            index.os[os] = ( index.os[os] || 0 ) + 1
 
           } )
         }

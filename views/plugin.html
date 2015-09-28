@@ -71,13 +71,6 @@
           License: {{plugin.license}}
         </p>
 
-        <p ng-if="plugin.supported_platforms">
-          Supported on
-          <span ng-repeat="os in plugin.supported_platforms track by $index">
-            <a href="">{{os}}</a>{{ $index < plugin.supported_platforms.length - 1 ? ',' : '' }}
-          </span>
-        </p>
-
         <p ng-if="plugin.versions">
           Gephi versions
           <span ng-repeat="v in plugin.versions track by $index">
