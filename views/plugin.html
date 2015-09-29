@@ -19,9 +19,11 @@
 
         <div class="plugin-types pull-right">
           <div ng-repeat="type in plugin.types track by $index">
-            <span class="label label-primary">
-              {{type}}
-            </span>
+            <a href="#/browse/type/{{type}}">
+              <span class="label label-primary">
+                {{type}}
+              </span>
+            </a>
           </div>
         </div>
 
