@@ -26,7 +26,7 @@ angular.module('gephiPluginsFront.home', ['ngRoute'])
     $scope.loading = false
     $scope.data = json
     $scope.typeList = Object.keys( json._index.type )
-    $scope.versionList = Object.keys( json._index.version )
+    $scope.versionList = Object.keys( json._index.version ).sort().reverse()
   })
 
   $scope.pluginSelected = function(selectedItem) {
