@@ -15,7 +15,7 @@ angular.module('gephiPluginsFront.home', ['ngRoute'])
 
   $scope.loading = true
   $scope.data // List of plugins
-  $scope.osInfo = 'for ' + Detectizr.os.name.toUpperCase() + ' ' + Detectizr.os.version.toUpperCase()
+  $scope.osInfo = 'for ' + (Detectizr.os.name || '').toUpperCase()
 
   $scope.typeList
   $scope.versionList
@@ -26,7 +26,7 @@ angular.module('gephiPluginsFront.home', ['ngRoute'])
     $scope.loading = false
     $scope.data = json
     $scope.typeList = Object.keys( json._index.type )
-    $scope.versionList = Object.keys( json._index.version )
+    $scope.versionList = Object.keys( json._index.version ).sort().reverse()
   })
 
   $scope.pluginSelected = function(selectedItem) {

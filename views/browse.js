@@ -30,7 +30,7 @@ angular.module('gephiPluginsFront.browse', ['ngRoute', 'angularUtils.directives.
     $scope.loading = false
     $scope.data = json
     $scope.typeList = Object.keys( json._index.type )
-    $scope.versionList = Object.keys( json._index.version )
+    $scope.versionList = Object.keys( json._index.version ).sort().reverse()
 
     $scope.plugins = filterPlugins(json.plugins)
 

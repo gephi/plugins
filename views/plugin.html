@@ -19,9 +19,11 @@
 
         <div class="plugin-types pull-right">
           <div ng-repeat="type in plugin.types track by $index">
-            <span class="label label-primary">
-              {{type}}
-            </span>
+            <a href="#/browse/type/{{type}}">
+              <span class="label label-primary">
+                {{type}}
+              </span>
+            </a>
           </div>
         </div>
 
@@ -50,7 +52,7 @@
           <p>{{plugin.catchphrase}}</p>
         </blockquote>
           
-        <md ng-model="plugin.description"></md>
+        <md class="plugin-description" ng-model="plugin.description"></md>
 
       </div>
     </div>
