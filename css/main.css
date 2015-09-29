@@ -226,6 +226,24 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 12px;
   text-align: right;
 }
+.plugin-card .plugin-description h1{
+  font-size:36px
+}
+.plugin-card .plugin-description h2{
+  font-size:32px
+}
+.plugin-card .plugin-description h3{
+  font-size:28px
+}
+.plugin-card .plugin-description h4{
+  font-size:24px
+}
+.plugin-card .plugin-description h5{
+  font-size:22px
+}
+.plugin-card .plugin-description h6{
+  font-size:20px
+}
 
 /* ==========================================================================
    Home view specific styles
