@@ -15,7 +15,7 @@ angular.module('gephiPluginsFront.home', ['ngRoute'])
 
   $scope.loading = true
   $scope.data // List of plugins
-  $scope.osInfo = 'for ' + Detectizr.os.name.toUpperCase() + ' ' + Detectizr.os.version.toUpperCase()
+  $scope.osInfo = 'for ' + (Detectizr.os.name || '').toUpperCase()
 
   $scope.typeList
   $scope.versionList
