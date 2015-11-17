@@ -13,7 +13,8 @@ angular.module('gephiPluginsFront.services', [])
 
       if ( json === undefined ) {
 
-        $http.get('plugins.json')
+        // $http.get('plugins.json')
+        $http.get('http://gephi.github.io/gephi-plugins/plugins/plugins.json')
           .then(function(response) {
 
             // this callback will be called asynchronously
@@ -58,7 +59,7 @@ angular.module('gephiPluginsFront.services', [])
 
           // Generate an id
           if ( p.name ) {
-            p.id = p.name.toLowerCase().replace(/[^a-z0-9\-]*/gi, '')
+            p.id = p.name.toLowerCase().replace(/[^a-z0-9\-\.]*/gi, '')
             console.log('Plugin "' + p.name + '": no ID, we created one from name: "' + p.id + '"' )
           } else {
             p.id = i
@@ -67,7 +68,7 @@ angular.module('gephiPluginsFront.services', [])
           
         } else {
 
-          var validId = p.id.toLowerCase().replace(/[^a-z0-9\-]*/gi, '') || i
+          var validId = p.id.toLowerCase().replace(/[^a-z0-9\-\.]*/gi, '') || i
           if ( validId != p.id ) {
             console.log('Plugin "' + p.name + '": ID "' + p.id + '" is not valid, we modified it to a valid version: "' + validId + '"' )
             p.id = validId
@@ -91,11 +92,39 @@ angular.module('gephiPluginsFront.services', [])
 
         }
 
+        // Compatibility alternatives
+        // catchphrase <- short_description
+        // description <- long_description
+        // category -> types
+        if ( p.catchphrase === undefined && p.short_description ) {
+          p.catchphrase = p.short_description
+        }
+
+        if ( p.description === undefined && p.long_description ) {
+          p.description = p.long_description
+          console.log( 'Plugin description for test:\n', p.description )
+        }
+
+        if ( p.types === undefined && p.category ) {
+          p.types = [p.category]
+        }
+
+
         // Identify a valid url for the main image
 
-        if ( p.screenshots && p.screenshots[0] ) {
+        if ( p.images && p.images[0] ) {
 
-          var url = p.screenshots[0]
+          var url
+
+          if ( p.images[0].constructor == String ) {
+            url = p.images[0]
+          } else if ( p.images[0].constructor == Object ) {
+            url = p.images[0].thumbnail || p.images[0].image
+
+            if ( url.indexOf('imgs/') == 0 ) {
+              url = 'http://gephi.github.io/gephi-plugins/plugins/' + url
+            }
+          }
 
           if ( validateURL(url) ) {
             p.image = url
@@ -108,7 +137,18 @@ angular.module('gephiPluginsFront.services', [])
         }
 
 
-        // Types, versions: trim and to lower case
+        // Ensure each version is on the form {url:'', last_update:''}
+
+        if ( p.versions && p.versions.constructor == Object ) {
+          for ( v in p.versions ) {
+            if ( p.versions[v].constructor == String ) {
+              p.versions[v] = {url: p.versions[v]}
+            }
+          }
+        }
+
+
+        // Types: trim and to lower case
 
         if ( p.types && p.types.constructor == Array ) {
           p.types = p.types.map( function(d) {
@@ -116,17 +156,6 @@ angular.module('gephiPluginsFront.services', [])
             return d.trim().toLowerCase()
 
           } )
-        }
-
-        if ( p.versions && p.versions.constructor == Object ) {
-          for ( v in p.versions ) {
-            var url = p.versions[v]
-            if ( url.constructor == String && validateURL(url) ) {
-              p.versions[v] = url.trim().toLowerCase()            
-            } else {
-              delete p.versions[v]
-            }
-          }
         }
 
 
@@ -151,17 +180,10 @@ angular.module('gephiPluginsFront.services', [])
         json._index = index
 
 
-        // Fix if there is one screenshot instead of many
+        // Fix if there is one image instead of many
 
-        if ( p.screenshot && p.screenshots === undefined ) {
-          p.screenshots = p.screenshot // Unique to array fixed below
-        }
-
-
-        // Fix if "screenshots" is a String instead of an Array
-
-        if ( p.screenshots && p.screenshots.constructor == String ) {
-          p.screenshots = [p.screenshots]
+        if ( p.image && p.images === undefined ) {
+          p.images = [p.image]
         }
 
 
@@ -183,7 +205,7 @@ angular.module('gephiPluginsFront.services', [])
 
         p._versions = []
         for ( v in p.versions ) {
-          p._versions.push({version:v, url:p.versions[v]})
+          p._versions.push({version:v, url:p.versions[v].url, last_update:p.versions[v].last_update})
         }
 
       })
