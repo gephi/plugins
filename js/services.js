@@ -14,7 +14,7 @@ angular.module('gephiPluginsFront.services', [])
       if ( json === undefined ) {
 
         // $http.get('plugins.json')
-        $http.get('http://gephi.github.io/gephi-plugins/plugins/plugins.json')
+        $http.get('http://gephi.org/gephi-plugins/plugins/plugins.json')
           .then(function(response) {
 
             // this callback will be called asynchronously
