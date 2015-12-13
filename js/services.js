@@ -122,7 +122,7 @@ angular.module('gephiPluginsFront.services', [])
             url = p.images[0].thumbnail || p.images[0].image
 
             if ( url.indexOf('imgs/') == 0 ) {
-              url = 'https://gephi.github.io/gephi-plugins/plugins/' + url
+              url = 'https://gephi.org/gephi-plugins/plugins/' + url
             }
           }
 
