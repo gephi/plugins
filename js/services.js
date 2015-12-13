@@ -14,7 +14,7 @@ angular.module('gephiPluginsFront.services', [])
       if ( json === undefined ) {
 
         // $http.get('plugins.json')
-        $http.get('http://gephi.org/gephi-plugins/plugins/plugins.json')
+        $http.get('https://gephi.org/gephi-plugins/plugins/plugins.json')
           .then(function(response) {
 
             // this callback will be called asynchronously
@@ -122,7 +122,7 @@ angular.module('gephiPluginsFront.services', [])
             url = p.images[0].thumbnail || p.images[0].image
 
             if ( url.indexOf('imgs/') == 0 ) {
-              url = 'http://gephi.github.io/gephi-plugins/plugins/' + url
+              url = 'https://gephi.org/gephi-plugins/plugins/' + url
             }
           }
 
