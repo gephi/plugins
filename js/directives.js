@@ -20,6 +20,7 @@ angular.module('gephiPluginsFront.directives', [])
       }
     , link: function($scope, el, attrs) {
         $scope.image = $scope.plugin.image || 'img/default_screenshot.jpg'
+
         $scope.go = function() {
           $location.path('/plugin/' + $scope.plugin.id )
         }
