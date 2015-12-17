@@ -13,7 +13,7 @@ angular.module('gephiPluginsFront.services', [])
 
       if ( json === undefined ) {
 
-        // $http.get('plugins.json')
+        // $http.get('http://127.0.0.1/github/gephi-plugins/plugins/plugins.json')
         $http.get('https://gephi.org/gephi-plugins/plugins/plugins.json')
           .then(function(response) {
 
@@ -110,22 +110,30 @@ angular.module('gephiPluginsFront.services', [])
         }
 
 
+        // Compatibility : modify if "images" contains strings instead of objects
+
+        if ( p.images ) {
+
+          p.images = p.images.map(function(img){
+            if ( img.constructor == String ) {
+              var url = img
+              img = {'image': url}
+            }
+            return img
+          })
+
+        }
+
         // Identify a valid url for the main image
 
         if ( p.images && p.images[0] ) {
 
-          var url
+          var url = p.images[0].thumbnail || p.images[0].image
 
-          if ( p.images[0].constructor == String ) {
-            url = p.images[0]
-          } else if ( p.images[0].constructor == Object ) {
-            url = p.images[0].thumbnail || p.images[0].image
-
-            if ( url.indexOf('imgs/') == 0 ) {
-              url = 'https://gephi.org/gephi-plugins/plugins/' + url
-            }
+          if ( url.indexOf('imgs/') == 0 ) {
+            url = 'https://gephi.org/gephi-plugins/plugins/' + url
           }
-
+          
           if ( validateURL(url) ) {
             p.image = url
           }
@@ -133,7 +141,7 @@ angular.module('gephiPluginsFront.services', [])
         }
 
         if ( !p.image ) {
-          console.log('Plugin "' + p.name + '": no valid image')
+          console.log('Plugin "' + p.name + '": no valid image', url)
         }
 
 
