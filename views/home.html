@@ -64,7 +64,7 @@
 
   <div class="row">
 
-    <div class="col-lg-3 col-sm-6" ng-repeat="plugin in data.plugins | orderBy:'lastUpdate' | limitTo:4 track by $index" >
+    <div class="col-lg-3 col-sm-6" ng-repeat="plugin in data.plugins | orderBy:'-date' | limitTo:4 track by $index" >
       <plugin-thumbnail plugin="plugin"/>
     </div>
 
