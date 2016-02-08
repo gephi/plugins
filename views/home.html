@@ -43,9 +43,9 @@
     <div class="col-md-4 col-sm-6 hidden-xs">
       <div class="panel-download pull-right">
 
-        <button class="btn btn-lg btn-link">
+        <a class="btn btn-lg btn-link" href="https://gephi.org/users/download/">
           <span class="glyphicon glyphicon-download"></span> DOWNLOAD GEPHI
-        </button>
+        </a>
 
         <p class="text-muted home-download-link-subtitle">
           {{osInfo}}
@@ -64,7 +64,7 @@
 
   <div class="row">
 
-    <div class="col-lg-3 col-sm-6" ng-repeat="plugin in data.plugins | orderBy:'lastUpdate' | limitTo:4 track by $index" >
+    <div class="col-lg-3 col-sm-6" ng-repeat="plugin in data.plugins | orderBy:'-date' | limitTo:4 track by $index" >
       <plugin-thumbnail plugin="plugin"/>
     </div>
 

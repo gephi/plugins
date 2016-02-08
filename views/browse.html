@@ -67,7 +67,7 @@
     <div class="col-sm-8">
 
       <div class="row">
-        <div class="col-md-6" dir-paginate="plugin in plugins | orderBy:'name' | itemsPerPage: 10 " >
+        <div class="col-md-6" dir-paginate="plugin in plugins | orderBy:filterActive?'-date':'name' | itemsPerPage: 10 " >
           <plugin-thumbnail plugin="plugin"/>
         </div>
       </div>

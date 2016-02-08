@@ -7,6 +7,7 @@ angular.module('gephiPluginsFront', [
 , 'yaru22.directives.md' // Markdown renderer
 , 'gephiPluginsFront.services'
 , 'gephiPluginsFront.directives'
+, 'gephiPluginsFront.filters'
 , 'gephiPluginsFront.home'
 , 'gephiPluginsFront.browse'
 , 'gephiPluginsFront.plugin'

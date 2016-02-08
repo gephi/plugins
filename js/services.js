@@ -102,7 +102,7 @@ angular.module('gephiPluginsFront.services', [])
 
         if ( p.description === undefined && p.long_description ) {
           p.description = p.long_description
-          console.log( 'Plugin description for test:\n', p.description )
+          // console.log( 'Plugin description for test:\n', p.description )
         }
 
         if ( p.types === undefined && p.category ) {
@@ -209,12 +209,25 @@ angular.module('gephiPluginsFront.services', [])
         }
         
 
+        // Parse the dates
+
+        for ( v in p.versions ) {
+          var d = new Date(p.versions[v].last_update)
+          p.versions[v].date = d;
+        }
+
+        p.date = new Date(p.last_update)
+
+
         // Build a flat "version" array
 
         p._versions = []
         for ( v in p.versions ) {
-          p._versions.push({version:v, url:p.versions[v].url, last_update:p.versions[v].last_update})
+          p._versions.push({version:v, url:p.versions[v].url, last_update:p.versions[v].last_update, date:p.versions[v].date})
         }
+        p._versions.sort(function(a,b){
+          return b.date - a.date;
+        })
 
       })
 
