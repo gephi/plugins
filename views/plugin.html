@@ -80,7 +80,7 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li ng-repeat="versionObj in plugin._versions track by $index">
+            <li ng-repeat="versionObj in plugin._versions | orderBy:'-date' track by $index">
               <a href="http://gephi.github.io/gephi-plugins/plugins/{{versionObj.url}}" target="_blank">{{versionObj.version}} - {{versionObj.last_update}}</a>
             </li>
           </ul>

@@ -225,6 +225,9 @@ angular.module('gephiPluginsFront.services', [])
         for ( v in p.versions ) {
           p._versions.push({version:v, url:p.versions[v].url, last_update:p.versions[v].last_update, date:p.versions[v].date})
         }
+        p._versions.sort(function(a,b){
+          return b.date - a.date;
+        })
 
       })
 
