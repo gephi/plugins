@@ -42,8 +42,8 @@
         <div class="plugin-screenshots" ng-show="plugin.images && plugin.images.length > 0">
           <table><tr>
             <td ng-repeat="image in plugin.images track by $index">
-              <a target="_blank" href="http://gephi.github.io/gephi-plugins/plugins/{{image.image}}">
-                <img ng-src="http://gephi.github.io/gephi-plugins/plugins/{{image.image}}" alt="{{plugin.name}}">
+              <a target="_blank" href="https://gephi.org/gephi-plugins/plugins/{{image.image}}">
+                <img ng-src="https://gephi.org/gephi-plugins/plugins/{{image.image}}" alt="{{plugin.name}}">
               </a>
             </td>
           </tr></table>
@@ -71,7 +71,7 @@
       </div>
 
       <div class="btn-group" role="group" aria-label="..." ng-if="plugin._versions && plugin._versions.length > 0">
-        <a type="button" class="btn btn-primary" href="http://gephi.github.io/gephi-plugins/plugins/{{plugin._versions[0].url}}" target="_blank">
+        <a type="button" class="btn btn-primary" href="https://gephi.org/gephi-plugins/plugins/{{plugin._versions[0].url}}" target="_blank">
           <span class="glyphicon glyphicon-download"></span> DOWNLOAD 
         </a>
 
@@ -82,7 +82,7 @@
           </button>
           <ul class="dropdown-menu">
             <li ng-repeat="versionObj in plugin._versions | orderBy:'-date' track by $index">
-              <a href="http://gephi.github.io/gephi-plugins/plugins/{{versionObj.url}}" target="_blank">{{versionObj.version}} - {{versionObj.last_update}}</a>
+              <a href="https://gephi.org/gephi-plugins/plugins/{{versionObj.url}}" target="_blank">{{versionObj.version}} - {{versionObj.last_update}}</a>
             </li>
           </ul>
         </div>
